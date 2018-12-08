@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BusRouteComponent implements OnInit {
 
-  route: string = '';
+  routes: any = ['a', 'b', 'c' , 'd', 'e'];
   busStop: string = '';
   direction: string = '';
 
