@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BusRouteComponent implements OnInit {
 
-  welcome = 'welcome to bus route!';
+  route: string = '';
+  busStop: string = '';
+  direction: string = '';
+
 
   constructor() { }
 
