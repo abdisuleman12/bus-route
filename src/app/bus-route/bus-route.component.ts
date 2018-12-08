@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BusRouteComponent implements OnInit {
 
-  welcome = 'welcome to bus route';
+  welcome = 'welcome to bus route!';
 
   constructor() { }
 
