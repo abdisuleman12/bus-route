@@ -9,37 +9,46 @@
     <div class="col">
         <div class="form-group">
             <label for="exampleFormControlSelect1">Route</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-              <option *ngFor="let route of routes">
+            <select 
+            class="form-control" 
+            id="exampleFormControlSelect1" 
+            [(ngModel)]="routeSelected"
+            (ngModelChange)="onRouteSelected($event)">
+              <option *ngFor="let route of routes" [value]="route.Route">
                 {{route.Description}}
               </option>
 
             </select>
         </div>
     </div>
-    <!-- <div class="col">
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">Bus Stop</label>
-            <select class="form-control" id="exampleFormControlSelect2">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-        </div>
-    </div> -->
-    <!-- <div class="col">
-        <div class="form-group">
+    <div class="col">
+        <div class="form-group" *ngIf="this.directions">
             <label for="exampleFormControlSelect1">Direction</label>
-            <select class="form-control" id="exampleFormControlSelect3">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
+            <select 
+            class="form-control" 
+            id="exampleFormControlSelect2"
+            [(ngModel)]="directionSelected"
+            (ngModelChange)="onDirectionSelected($event)"
+            >
+              <option *ngFor="let direction of directions" [value]="direction.Value">
+                {{direction.Text}}
+              </option>
             </select>
         </div>
-    </div> -->
+    </div>
+    <div class="col">
+        <div class="form-group" *ngIf="this.stops">
+            <label for="exampleFormControlSelect1">Stops</label>
+            <select 
+            class="form-control" 
+            id="exampleFormControlSelect3"
+            
+            >
+              <option *ngFor="let stop of stops" [value]="stop.Value">
+                {{stop.Text}}
+              </option>
+            </select>
+        </div>
+    </div>
   </div>
 </div>
