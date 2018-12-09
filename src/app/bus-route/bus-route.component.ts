@@ -26,7 +26,7 @@ export class BusRouteComponent implements OnInit {
     this.metro.getRoutes()
         .subscribe(data => this.routes = data);
         // default value for select route option
-        this.routeSelected = 901;
+        // this.routeSelected = 901;
   } 
 
   onRouteSelected(route: any) {
@@ -34,14 +34,24 @@ export class BusRouteComponent implements OnInit {
         .subscribe(data => this.directions = data)
         
         //default value for select direction option
-        this.directionSelected = 1;
+        // this.directionSelected = 1;
   }
 
-  onDirectionSelected(direction, route) {
+  onDirectionSelected(direction: any, route: any) {
     route = this.routeSelected
     this.metro.getStops(direction, route)
         .subscribe(data => this.stops = data)
   }
+
+  onStopSelected(stop: any) {
+    this.stopSelected = stop;
+  }
+
+  getArrival() {
+    console.log('button clicked')
+  }
+
+  submit
 
 
 }
