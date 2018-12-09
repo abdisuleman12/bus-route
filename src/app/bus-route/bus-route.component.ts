@@ -58,4 +58,10 @@ export class BusRouteComponent implements OnInit {
         .subscribe(data => this.departureText = data)
   }
 
+  clear() {
+    this.routeSelected = null
+    this.stopSelected, this.stops = null
+    this.directionSelected , this.directions = null
+  }
+
 }
