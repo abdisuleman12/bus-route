@@ -53,9 +53,17 @@
     </div>
   </div>
 
-    <div class="row text-center mt-2">
-      <div class="col">
-        <button class="btn btn-primary btn-lg" (click)="getArrival()"> Get Bus Arrival Time </button>
-      </div>
+  <div class="row text-center mt-2">
+    <div class="col" *ngIf="this.routeSelected && this.stopSelected && this.directionSelected">
+      <button class="btn btn-primary btn-lg" (click)="getArrivalButton()"> Get Bus Arrival Time </button>
     </div>
+  </div>
+
+  <div class="row text-center mt-4">
+    <div class="col" *ngIf="departureText">
+        <div class="alert alert-success" role="alert">
+            Arrival Time : {{departureText[0].DepartureText}}
+          </div>
+    </div>
+  </div>
 </div>
