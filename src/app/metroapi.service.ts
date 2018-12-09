@@ -1,19 +1,17 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, of } from 'rxjs'
+import { Observable } from 'rxjs'
+
+import { Route } from './route'
 
 @Injectable({
   providedIn: 'root'
 })
 export class MetroApiService {
 
-  constructor(
-    private http: HttpClient
-  ) { }
+  constructor(private http: HttpClient) {}
 
-  ngOnInit() {}
-
-  getRoutes(): Observable<{}> {
-    return this.http.get('http://svc.metrotransit.org/NexTrip/Routes')
+  getRoutes(): Observable<Route[]> {
+    return this.http.get<Route[]>('http://svc.metrotransit.org/NexTrip/Routes');
   }
 }

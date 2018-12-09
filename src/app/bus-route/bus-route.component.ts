@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MetroApiService } from '../metroapi.service';
+import { Route } from '../route';
 
 @Component({
   selector: 'app-bus-route',
@@ -8,20 +9,17 @@ import { MetroApiService } from '../metroapi.service';
 })
 export class BusRouteComponent implements OnInit {
 
-  routes: any;
+  routes: Route[] = [];
   busStop: string = '';
   direction: string = '';
 
 
-  constructor
-  (
-    private metro: MetroApiService
-  ) {}
+  constructor (private metro: MetroApiService) {}
 
   ngOnInit() {
-    this.routes = this.metro.getRoutes().subscribe((response) => {
-      console.log(response)
-    })
+    this.metro.getRoutes()
+        .subscribe(data => this.routes = data)
+    
   }
 
 }
