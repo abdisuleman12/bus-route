@@ -5,7 +5,7 @@
     </div>
   </div>
 
-  <div class="row text-center justify-content-center">
+  <div class="row text-center mt-4">
     <div class="col">
         <div class="form-group">
             <label for="exampleFormControlSelect1">Route</label>
@@ -21,8 +21,8 @@
             </select>
         </div>
     </div>
-    <div class="col">
-        <div class="form-group" *ngIf="this.directions">
+    <div class="col" *ngIf="this.directions">
+        <div class="form-group">
             <label for="exampleFormControlSelect1">Direction</label>
             <select 
             class="form-control" 
@@ -36,13 +36,14 @@
             </select>
         </div>
     </div>
-    <div class="col">
-        <div class="form-group" *ngIf="this.stops">
+    <div class="col" *ngIf="this.stops">
+        <div class="form-group">
             <label for="exampleFormControlSelect1">Stops</label>
             <select 
             class="form-control" 
             id="exampleFormControlSelect3"
-            
+            [(ngModel)]="stopSelected"
+            (ngModelChange)="onStopSelected($event)"
             >
               <option *ngFor="let stop of stops" [value]="stop.Value">
                 {{stop.Text}}
@@ -51,4 +52,10 @@
         </div>
     </div>
   </div>
+
+    <div class="row text-center mt-2">
+      <div class="col">
+        <button class="btn btn-primary btn-lg" (click)="getArrival()"> Get Bus Arrival Time </button>
+      </div>
+    </div>
 </div>
