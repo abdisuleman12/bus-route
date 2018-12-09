@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+
 import { MetroApiService } from '../metroapi.service';
-import { Route } from '../route';
-import { Directions } from '../directions';
+
+import { Route } from '../classes/route';
+import { Directions } from '../classes/directions';
+import { Stops } from '../classes/stops'
+import { Details } from '../classes/details'
 
 @Component({
   selector: 'app-bus-route',
@@ -10,10 +14,12 @@ import { Directions } from '../directions';
 })
 export class BusRouteComponent implements OnInit {
 
+  departureText: Details[] ;
+
   routes: Route[] = [];
   routeSelected: number;
   
-  stops: any;
+  stops: Stops[];
   stopSelected: string;
   
   directions: Directions[];
@@ -47,11 +53,9 @@ export class BusRouteComponent implements OnInit {
     this.stopSelected = stop;
   }
 
-  getArrival() {
-    console.log('button clicked')
+  getArrivalButton() {
+    this.metro.getArrivalTime(this.routeSelected, this.directionSelected, this.stopSelected)
+        .subscribe(data => this.departureText = data)
   }
-
-  submit
-
 
 }
