@@ -1,8 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { BusRouteComponent } from './bus-route/bus-route.component';
+import { MetroApiService } from './metroapi.service';
 
 @NgModule({
   declarations: [
@@ -11,9 +13,9 @@ import { BusRouteComponent } from './bus-route/bus-route.component';
   ],
   imports: [
     BrowserModule,
-
+    HttpClientModule
   ],
-  providers: [],
+  providers: [MetroApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
