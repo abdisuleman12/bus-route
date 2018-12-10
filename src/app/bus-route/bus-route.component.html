@@ -15,7 +15,7 @@
               class="form-control" 
               id="exampleFormControlSelect1" 
               [(ngModel)]="routeSelected"
-              (ngModelChange)="onRouteSelected($event)">
+              (ngModelChange)="onRouteChange($event)">
                 <option *ngFor="let route of routes" [value]="route.Route">
                   {{route.Description}}
                 </option>
@@ -79,7 +79,7 @@
   </div>
 
     
-    <!-- route {{this.routeSelected}}
+    route {{this.routeSelected}}
     direction {{this.directionSelected}}
-    stop {{this.stopSelected}} -->
+    stop {{this.stopSelected}}
 </div>
