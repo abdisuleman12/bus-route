@@ -2,10 +2,10 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs'
 
-import { Route } from './classes/route'
-import { Directions } from './classes/directions';
-import { Stops } from './classes/stops';
-import { Details } from './classes/details';
+import { Route } from '../classes/route'
+import { Directions } from '../classes/directions';
+import { Stops } from '../classes/stops';
+import { Details } from '../classes/details';
 
 @Injectable({
   providedIn: 'root'
