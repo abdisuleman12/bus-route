@@ -33,16 +33,22 @@ export class BusRouteComponent implements OnInit {
   ngOnInit() {
     this.metro.getRoutes()
         .subscribe(data => this.routes = data);
-        // default value for select route option
-        // this.routeSelected = 901;
   } 
+
+  onRouteChange(routeChanged: any) {
+    //resetting direction selected on route change
+    this.directionSelected = 0;
+    //resetting stop selected on route change
+    this.stopSelected = "";
+    //resetting departure text on route change
+    this.departureText = "";
+
+    this.onRouteSelected(routeChanged)
+  }
 
   onRouteSelected(route: any) {
     this.metro.getDirections(route)
         .subscribe(data => this.directions = data)
-        
-        //default value for select direction option
-        this.directionSelected = 0;
   }
 
   onDirectionSelected(direction: any, route: any) {
@@ -60,8 +66,13 @@ export class BusRouteComponent implements OnInit {
         .subscribe(
           data => 
           { 
-            if (data.length > 1) {this.departureText = data[0].DepartureText }
-            else {this.noBusTime = true;}
+            if (data.length > 1) 
+              {this.departureText = data[0].DepartureText }
+            else 
+              {
+                this.noBusTime = true; 
+                this.departureText = ""
+              }
           }
           )
   }
