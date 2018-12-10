@@ -1,4 +1,5 @@
 <div class="container">
+  <!-- heading -->
   <div class="row">
     <div class="col">
       <h1 class="text-center">Bus Arrival</h1>
@@ -6,65 +7,79 @@
   </div>
 
   <div class="row text-center mt-4">
-    <div class="col">
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">Route</label>
-            <select 
-            class="form-control" 
-            id="exampleFormControlSelect1" 
-            [(ngModel)]="routeSelected"
-            (ngModelChange)="onRouteSelected($event)">
-              <option *ngFor="let route of routes" [value]="route.Route">
-                {{route.Description}}
-              </option>
-
-            </select>
-        </div>
-    </div>
-    <div class="col" *ngIf="this.directions">
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">Direction</label>
-            <select 
-            class="form-control" 
-            id="exampleFormControlSelect2"
-            [(ngModel)]="directionSelected"
-            (ngModelChange)="onDirectionSelected($event)"
-            >
-              <option *ngFor="let direction of directions" [value]="direction.Value">
-                {{direction.Text}}
-              </option>
-            </select>
-        </div>
-    </div>
-    <div class="col" *ngIf="this.stops">
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">Stops</label>
-            <select 
-            class="form-control" 
-            id="exampleFormControlSelect3"
-            [(ngModel)]="stopSelected"
-            (ngModelChange)="onStopSelected($event)"
-            >
-              <option *ngFor="let stop of stops" [value]="stop.Value">
-                {{stop.Text}}
-              </option>
-            </select>
-        </div>
-    </div>
-  </div>
-
-  <div class="row text-center mt-2">
-    <div class="col" *ngIf="this.routeSelected && this.stopSelected && this.directionSelected">
-      <button class="btn btn-primary btn-lg" (click)="getArrivalButton()"> Get Bus Arrival Time </button>
-      <button class="btn btn-danger btn-lg ml-2" (click)="clear()"> Clear </button>
-    </div>
-  </div>
-
-  <div class="row text-center mt-4">
-    <div class="col" *ngIf="departureText">
-        <div class="alert alert-success" role="alert">
-            Arrival Time : {{departureText[0].DepartureText}}
+      <!-- route select -->
+      <div class="col">
+          <div class="form-group">
+              <label for="exampleFormControlSelect1">Route</label>
+              <select 
+              class="form-control" 
+              id="exampleFormControlSelect1" 
+              [(ngModel)]="routeSelected"
+              (ngModelChange)="onRouteSelected($event)">
+                <option *ngFor="let route of routes" [value]="route.Route">
+                  {{route.Description}}
+                </option>
+              </select>
           </div>
-    </div>
+      </div>
+      <!-- direction select -->
+      <div class="col" *ngIf="this.routeSelected">
+          <div class="form-group">
+              <label for="exampleFormControlSelect1">Direction</label>
+              <select 
+              class="form-control" 
+              id="exampleFormControlSelect2"
+              [(ngModel)]="directionSelected"
+              (ngModelChange)="onDirectionSelected($event)"
+              >
+                <option *ngFor="let direction of directions" [value]="direction.Value">
+                  {{direction.Text}}
+                </option>
+              </select>
+          </div>
+      </div>
+      <!-- stop select -->
+      <div class="col" *ngIf="this.directionSelected">
+          <div class="form-group">
+              <label for="exampleFormControlSelect1">Stops</label>
+              <select 
+              class="form-control" 
+              id="exampleFormControlSelect3"
+              [(ngModel)]="stopSelected"
+              (ngModelChange)="onStopSelected($event)"
+              >
+                <option *ngFor="let stop of stops" [value]="stop.Value">
+                  {{stop.Text}}
+                </option>
+              </select>
+          </div>
+      </div>
   </div>
+
+  <!-- buttons -->
+  <div class="row text-center mt-2">
+      <div class="col">
+        <button *ngIf="this.stopSelected" class="btn btn-primary btn-lg" (click)="getArrivalButton()"> Get Bus Arrival Time </button>
+        <button *ngIf="this.routeSelected" class="btn btn-danger btn-lg ml-2" (click)="clear()"> Clear </button>
+      </div>
+  </div>
+
+  <!-- alerts -->
+  <div class="row text-center mt-4">
+      <div class="col" *ngIf="departureText">
+          <div class="alert alert-success" role="alert">
+              Arrival Time : {{departureText}}
+            </div>
+      </div>
+      <div class="col" *ngIf="noBusTime">
+          <div class="alert alert-danger" role="alert">
+              No Buses Available 
+            </div>
+      </div>
+  </div>
+
+    
+    <!-- route {{this.routeSelected}}
+    direction {{this.directionSelected}}
+    stop {{this.stopSelected}} -->
 </div>

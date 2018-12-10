@@ -14,7 +14,9 @@ import { Details } from '../classes/details'
 })
 export class BusRouteComponent implements OnInit {
 
-  departureText: Details[] ;
+  noBusTime: boolean = false;
+
+  departureText: string ;
 
   routes: Route[] = [];
   routeSelected: number;
@@ -40,7 +42,7 @@ export class BusRouteComponent implements OnInit {
         .subscribe(data => this.directions = data)
         
         //default value for select direction option
-        // this.directionSelected = 1;
+        this.directionSelected = 0;
   }
 
   onDirectionSelected(direction: any, route: any) {
@@ -55,13 +57,20 @@ export class BusRouteComponent implements OnInit {
 
   getArrivalButton() {
     this.metro.getArrivalTime(this.routeSelected, this.directionSelected, this.stopSelected)
-        .subscribe(data => this.departureText = data)
+        .subscribe(
+          data => 
+          { 
+            if (data.length > 1) {this.departureText = data[0].DepartureText }
+            else {this.noBusTime = true;}
+          }
+          )
   }
 
   clear() {
-    this.routeSelected = null
-    this.stopSelected, this.stops = null
-    this.directionSelected , this.directions = null
+    this.routeSelected = null;
+    this.stopSelected = "";
+    this.directionSelected = 0
+    this.departureText = ""
   }
 
 }
