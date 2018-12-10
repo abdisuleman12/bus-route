@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MetroApiService } from '../metroapi.service';
+import { MetroApiService } from '../service/metroapi.service';
 
 import { Route } from '../classes/route';
 import { Directions } from '../classes/directions';

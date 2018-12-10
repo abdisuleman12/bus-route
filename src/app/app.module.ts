@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { BusRouteComponent } from './bus-route/bus-route.component';
-import { MetroApiService } from './metroapi.service';
+import { MetroApiService } from './service/metroapi.service';
 
 @NgModule({
   declarations: [
