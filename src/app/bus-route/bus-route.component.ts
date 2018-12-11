@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { MetroApiService } from '../service/metroapi.service';
 
 import { Route } from '../classes/route';
 import { Directions } from '../classes/directions';
 import { Stops } from '../classes/stops'
-import { Details } from '../classes/details'
+
 
 @Component({
   selector: 'app-bus-route',
@@ -13,6 +13,10 @@ import { Details } from '../classes/details'
   styleUrls: ['./bus-route.component.scss']
 })
 export class BusRouteComponent implements OnInit {
+
+  lat: number;
+  long: number;
+
 
   noBusTime: boolean = false;
 
@@ -67,11 +71,13 @@ export class BusRouteComponent implements OnInit {
           data => 
           { 
             if (data.length > 1) 
-              {this.departureText = data[0].DepartureText }
-            else 
               {
+                this.departureText = data[0].DepartureText;
+              }
+            else 
+              { 
                 this.noBusTime = true; 
-                this.departureText = ""
+                this.departureText = "";
               }
           }
           )

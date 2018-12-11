@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MetroapiService } from './metroapi.service';
+import { MetroApiService } from '../service/metroapi.service';
 
 describe('MetroapiService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: MetroapiService = TestBed.get(MetroapiService);
+    const service: MetroApiService = TestBed.get(MetroApiService);
     expect(service).toBeTruthy();
   });
 });
