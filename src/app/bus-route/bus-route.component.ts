@@ -48,6 +48,11 @@ export class BusRouteComponent implements OnInit {
     this.stopSelected = "";
     //resetting departure text on route change
     this.departureText = "";
+    //resetting no bus alert
+    this.noBusTime = false;
+    // reset lng , lat
+    this.lat = 0;
+    this.lng = 0;
 
     this.onRouteSelected(routeChanged)
   }
@@ -99,6 +104,9 @@ export class BusRouteComponent implements OnInit {
     this.stopSelected = "";
     this.directionSelected = 0
     this.departureText = ""
+    this.lat = 0;
+    this.lng = 0;
+    this.noBusTime = false;
   }
 
 }
