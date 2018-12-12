@@ -1,27 +1,33 @@
 # BusRoute
 
+
+How long it is until the next bus on “BUS ROUTE” leaving from “BUS STOP NAME” going “DIRECTION”? “BUS ROUTE” will be a substring of the bus route name which is only in one bus route “BUS STOP NAME” will be a substring of the bus stop name which is only in one bus stop on that route “DIRECTION” will be “north” “east” “west” or “south”
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.4.
+
+## Download Angular Cli 
+
+npm install -g @angular/cli
+
+##Download to your computer
+Clone this repo, install dependencies, then start it up:
+
+> git clone https://github.com/abdisuleman12/bus-route
+> cd bus-route
+> npm install
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+In project directory run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## View Online
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Deployed using firebase. 
 
-## Running end-to-end tests
+https://metroapiapp.firebaseapp.com/
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
