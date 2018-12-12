@@ -2,6 +2,10 @@
 
 How long it is until the next bus on “BUS ROUTE” leaving from “BUS STOP NAME” going “DIRECTION”? “BUS ROUTE” will be a substring of the bus route name which is only in one bus route “BUS STOP NAME” will be a substring of the bus stop name which is only in one bus stop on that route “DIRECTION” will be “north” “east” “west” or “south”
 
+```
+App also includes google maps to show last location of bus route.
+```
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.4.
 
 ## Download Angular Cli 
