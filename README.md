@@ -11,10 +11,13 @@ npm install -g @angular/cli
 ## Download to your computer
 
 Clone this repo, install dependencies, then start it up:
+```
 
 > git clone https://github.com/abdisuleman12/bus-route
 > cd bus-route
 > npm install
+
+```
 
 ## Development server
 
@@ -28,6 +31,8 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Deployed using firebase. 
 
+```
 https://metroapiapp.firebaseapp.com/
+```
 
 
