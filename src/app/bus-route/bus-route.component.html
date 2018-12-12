@@ -78,4 +78,21 @@
       </div>
   </div>
 
+  <div class="row" *ngIf="lat && lng">
+    <div class="col text-center">
+        <div class="dropright">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Show Last Location
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item">
+                  <agm-map [mapTypeId]="'hybrid'" [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+                      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+                  </agm-map>
+              </a>
+            </div>
+          </div>
+    </div>
+  </div>
+
 </div>

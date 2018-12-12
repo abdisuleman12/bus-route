@@ -14,8 +14,10 @@ import { Stops } from '../classes/stops'
 })
 export class BusRouteComponent implements OnInit {
 
+  zoom: number = 8;
+
   lat: number;
-  long: number;
+  lng: number; 
 
 
   noBusTime: boolean = false;
@@ -72,7 +74,16 @@ export class BusRouteComponent implements OnInit {
           { 
             if (data.length > 1) 
               {
+
+                console.log('data', data)
                 this.departureText = data[0].DepartureText;
+
+                  if(data[0].VehicleLatitude && data[0].VehicleLongitude)
+                    {
+                      this.lat = data[0].VehicleLatitude;
+                      this.lng = data[0].VehicleLongitude
+                      this.zoom = 16;
+                    }
               }
             else 
               { 
