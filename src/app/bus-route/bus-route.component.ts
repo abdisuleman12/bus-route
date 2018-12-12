@@ -42,20 +42,21 @@ export class BusRouteComponent implements OnInit {
   } 
 
   onRouteChange(routeChanged: any) {
-    
-    //resetting no bus alert
-    this.noBusTime = false;
-    // reset lng , lat
-    this.lat = 0;
-    this.lng = 0;
-    //resetting direction selected on route change
-    this.directionSelected = 0;
-    //resetting stop selected on route change
-    this.stopSelected = "";
-    //resetting departure text on route change
-    this.departureText = "";
-
+    this.onRouteReset()
     this.onRouteSelected(routeChanged)
+  }
+
+  onRouteReset() {
+     //resetting no bus alert to hide alert on route change
+     this.noBusTime = false;
+     // reset lng , lat
+     this.lat = 0; this.lng = 0;
+     //resetting direction selected on route change
+     this.directionSelected = 0;
+     //resetting stop selected on route change
+     this.stopSelected = "";
+     //resetting departure text on route change
+     this.departureText = "";
   }
 
   onRouteSelected(route: any) {
