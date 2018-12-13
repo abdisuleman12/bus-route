@@ -8,7 +8,7 @@
 
   <div class="row text-center mt-4">
       <!-- route select -->
-      <div class="col">
+      <div class="col-sm">
           <div class="form-group">
               <label for="exampleFormControlSelect1">Route</label>
               <select 
@@ -23,7 +23,7 @@
           </div>
       </div>
       <!-- direction select -->
-      <div class="col" *ngIf="this.routeSelected">
+      <div class="col-sm" *ngIf="this.routeSelected">
           <div class="form-group">
               <label for="exampleFormControlSelect1">Direction</label>
               <select 
@@ -39,7 +39,7 @@
           </div>
       </div>
       <!-- stop select -->
-      <div class="col" *ngIf="this.directionSelected">
+      <div class="col-sm" *ngIf="this.directionSelected">
           <div class="form-group">
               <label for="exampleFormControlSelect1">Stops</label>
               <select 
@@ -53,7 +53,7 @@
                 </option>
               </select>
           </div>
-      </div>
+      </div> 
   </div>
 
   <!-- buttons -->
