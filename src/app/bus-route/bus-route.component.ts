@@ -72,6 +72,7 @@ export class BusRouteComponent implements OnInit {
 
   onStopSelected(stop: any) {
     this.stopSelected = stop;
+    this.noBusTime = false;
   }
 
   getArrivalButton() {
